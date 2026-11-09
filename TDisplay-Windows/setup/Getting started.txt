@@ -1,0 +1,77 @@
+TDisplay turns an Android tablet into a second monitor for this PC, over a USB cable.
+If the tablet has a pen, the pen works as a Windows pen. Two fingers scroll, pinch to zoom and twist to rotate, as on a
+touchscreen. A quick two-finger tap is undo and a three-finger tap is redo (on Lenovo tablets, turn off the tablet's own
+three-finger gestures first). One finger and palms do nothing, and fingers are ignored while the pen is near the screen. The tray menu
+has a switch to turn the two-finger gestures off.
+
+On the tablet, tap the small bar at the top of the screen with a finger to open the TDisplay menu. It has switches for
+the instant cursor (a ring under the pen tip, drawn by the tablet before the laptop's picture catches up), the palm
+filter, edge lock (pins the app so edge swipes can't take you out of it) and statistics, and a button to leave the app.
+If edge lock does nothing, turn on App pinning in the tablet's Settings. If leaving the app locks the tablet, turn off
+"Ask for PIN before unpinning" there.
+
+
+CONNECTING A TABLET
+
+You need a tablet with Android 11 or newer, and a USB cable that carries data.
+
+1. Turn on USB debugging on the tablet. You only do this once.
+   - Open Settings > About tablet and tap "Build number" seven times.
+     (On some tablets it's under Software information or Version.)
+   - Go back and open Developer options, often under Settings > System.
+   - Turn on USB debugging.
+
+2. Plug the tablet into this PC with the USB cable.
+
+3. Tap Allow on the tablet when it asks to allow USB debugging. Tick "Always allow" so it doesn't ask again.
+
+4. The TDisplay PC app installs and opens by itself, and the tablet becomes a second monitor.
+
+TDisplay starts with Windows and waits in the background. Its tablet icon is in the taskbar's tray:
+grey while waiting, green when connected, orange if something needs attention. Hover over it for the details.
+Click it for the menu, where you can turn off "Start with Windows".
+
+
+GETTING THE BEST PICTURE
+
+- Pick the text size in Windows: Settings > System > Display, select the tablet's screen, and set Scale.
+  Around 200% suits most tablets.
+- Arrange the screens there too, so the mouse moves to the tablet on the side it's sitting on.
+- Turn off Battery Saver on the tablet. Many tablets limit the screen to 60 Hz while it's on.
+- Use a USB 3 cable and port if you have them. Many cables that come with phones are USB 2 only. It still works, just
+  with less room for large screen changes.
+
+
+IF IT DOESN'T CONNECT
+
+The tray icon stays grey with the tablet plugged in:
+- Check that USB debugging is on, and try another cable. Some cables only charge.
+- Samsung and some other tablets need their maker's USB driver on the PC. Windows Update usually offers it under
+  Settings > Windows Update > Advanced options > Optional updates. Otherwise it's on the maker's website.
+  For Samsung, search for "Samsung USB driver for mobile phones".
+
+The tablet blocks the app, or it says it can't install:
+- On Xiaomi and some others, also turn on "Install via USB" in Developer options, then plug the tablet in again.
+- If Google Play Protect asks about the app, choose to install it anyway.
+
+The tray icon says another program is holding the tablet:
+- Only one program can use the tablet's USB connection. Close Android Studio, or anything else that uses adb.
+  SuperDisplay has to be stopped or uninstalled too.
+
+The tray icon says the video encoder wouldn't start:
+- Install the latest graphics driver from the maker's website (NVIDIA, Intel or AMD), then restart the PC.
+- Close anything else that records the screen, such as streaming or screen recording software.
+
+The tablet connects, but the pen doesn't do anything in one program:
+- Windows blocks pen input from reaching programs running as administrator, such as Task Manager.
+
+Windows vanished onto a screen you can't see:
+- Start TDisplay, which removes its monitor when no tablet is connected, or use Settings > System > Display.
+
+
+REMOVING IT
+
+Use Settings > Apps > Installed apps > TDisplay > Uninstall. That removes the program and its virtual monitor.
+The TDisplay PC app on the tablet stays until you uninstall it there.
+
+The log is in %LOCALAPPDATA%\TDisplay\host.log. The tray menu has a shortcut to its folder.
